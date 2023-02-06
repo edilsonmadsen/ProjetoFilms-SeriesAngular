@@ -1,0 +1,19 @@
+.card-home {
+  background-color: #3964da;
+}
+
+.card-home .card-title {
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+  line-height: 1.2;
+}
+
+.card-home .card-subtitle {
+  font-size: 0.8rem;
+  margin-bottom: 10px;
+}
+
+.btn_add_serie {
+  display: flex;
+  justify-content: flex-end;
+}
