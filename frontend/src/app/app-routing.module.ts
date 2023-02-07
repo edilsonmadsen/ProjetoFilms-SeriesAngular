@@ -5,6 +5,7 @@ import { HomeComponent } from "./views/home/home.component";
 import { MoviesComponent } from "./views/movies/movies.component";
 import { SeriesComponent } from "./views/series/series.component";
 import { MovieCreateComponent } from "./components/movie/movie-create/movie-create.component";
+import { SerieCreateComponent } from "./components/serie/serie-create/serie-create.component";
 
 const routes: Routes = [
   {
@@ -22,6 +23,10 @@ const routes: Routes = [
   {
     path: "series",
     component: SeriesComponent,
+  },
+  {
+    path: "series/create",
+    component: SerieCreateComponent,
   },
 ];
 

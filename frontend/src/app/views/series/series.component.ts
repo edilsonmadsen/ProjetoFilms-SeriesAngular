@@ -12,6 +12,6 @@ export class SeriesComponent implements OnInit {
   ngOnInit(): void {}
 
   navigateToSerieCreate() {
-    this.router.navigate(["serie/create"]);
+    this.router.navigate(["series/create"]);
   }
 }
