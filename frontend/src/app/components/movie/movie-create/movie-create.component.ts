@@ -3,6 +3,7 @@ import { Router } from "@angular/router";
 import { MovieService } from "./../movie.service";
 import { Movie } from "./../movie.model";
 import { SharedService } from "./../../shared/shared.service";
+import { FormBuilder } from "@angular/forms";
 
 @Component({
   selector: "app-movie-create",
@@ -25,7 +26,8 @@ export class MovieCreateComponent implements OnInit {
   constructor(
     private router: Router,
     private movieService: MovieService,
-    private sharedService: SharedService
+    private sharedService: SharedService,
+    private fb: FormBuilder
   ) {}
 
   ngOnInit(): void {}

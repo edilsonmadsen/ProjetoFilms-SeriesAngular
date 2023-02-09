@@ -1,5 +1,5 @@
 import { Injectable } from "@angular/core";
-import { Movie } from "./movie.model";
+import { Serie } from "./serie.model";
 import { Observable, EMPTY } from "rxjs";
 import { HttpClient } from "@angular/common/http";
 import { catchError, map } from "rxjs/operators";
@@ -10,7 +10,7 @@ import { SharedService } from "./../shared/shared.service";
 @Injectable({
   providedIn: "root",
 })
-export class MovieService {
+export class SerieService {
   constructor(private http: HttpClient, private sharedService: SharedService) {}
 
   handleError(error: any): Observable<any> {
@@ -26,38 +26,38 @@ export class MovieService {
     return EMPTY;
   }
 
-  create(movie: Movie): Observable<Movie> {
-    return this.http.post<Movie>(`${API}/movies`, movie).pipe(
+  create(serie: Serie): Observable<Serie> {
+    return this.http.post<Serie>(`${API}/series`, serie).pipe(
       map((obj) => obj),
       catchError((e) => this.handleError(e))
     );
   }
 
-  index(): Observable<Movie[]> {
-    return this.http.get<Movie[]>(`${API}/movies`).pipe(
+  index(): Observable<Serie[]> {
+    return this.http.get<Serie[]>(`${API}/series`).pipe(
       map((obj) => obj),
       catchError((e) => this.handleError(e))
     );
   }
 
-  getById(id: number): Observable<Movie> {
-    return this.http.get<Movie>(`${API}/movies/${id}`).pipe(
+  getByIdSerie(id: number): Observable<Serie> {
+    return this.http.get<Serie>(`${API}/series/${id}`).pipe(
       map((obj) => obj),
       catchError((e) => this.handleError(e))
     );
   }
 
-  update(movie: Movie): Observable<Movie> {
-    const url = `${API}/movies/${movie.id}`;
-    return this.http.put<Movie>(url, movie).pipe(
+  update(serie: Serie): Observable<Serie> {
+    const url = `${API}/series/${serie.id}`;
+    return this.http.put<Serie>(url, serie).pipe(
       map((obj) => obj),
       catchError((e) => this.handleError(e))
     );
   }
 
-  delete(id?: number): Observable<Movie> {
-    const url = `${API}/movies/${id}`;
-    return this.http.delete<Movie>(url).pipe(
+  deleteSerie(id?: number): Observable<Serie> {
+    const url = `${API}/series/${id}`;
+    return this.http.delete<Serie>(url).pipe(
       map((obj) => obj),
       catchError((e) => this.handleError(e))
     );

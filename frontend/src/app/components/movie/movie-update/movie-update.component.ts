@@ -25,7 +25,7 @@ export class MovieUpdateComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    const id = this.route.snapshot.paramMap.get("id");
+    const id: any = this.route.snapshot.paramMap.get("id");
 
     this.movieService.getById(id).subscribe((movie) => {
       this.movie = movie;

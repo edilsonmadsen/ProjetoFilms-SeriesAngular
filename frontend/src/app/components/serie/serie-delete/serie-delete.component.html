@@ -1,0 +1,50 @@
+<mat-card class="card-home mat-elevation-z3">
+  <mat-card-title class="card-title"> Editar série </mat-card-title>
+
+  <form>
+    <mat-form-field appearance="fill">
+      <input
+        matInput
+        placeholder="Título da Série"
+        name="title"
+        [(ngModel)]="serie.title"
+        disabled
+      />
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <input
+        matInput
+        placeholder="Diretor(es) da Série"
+        name="director"
+        [(ngModel)]="serie.director"
+        disabled
+      />
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <input
+        matInput
+        placeholder="Gênero da Série"
+        name="genres"
+        [(ngModel)]="serie.genres"
+        disabled
+      />
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <input
+        matInput
+        placeholder="Ano de Lançamento da Série"
+        name="year"
+        [(ngModel)]="serie.year"
+        disabled
+      />
+    </mat-form-field>
+  </form>
+
+  <div>
+    <button mat-flat-button color="warn" (click)="deleteSerie()">
+      Remover
+    </button>
+    <button mat-flat-button (click)="cancel()">Cancelar</button>
+  </div>
+</mat-card>

@@ -6,6 +6,7 @@ import { AppComponent } from "./app.component";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { HeaderComponent } from "./components/template/header/header.component";
 import { HttpClientModule } from "@angular/common/http";
+import { ReactiveFormsModule } from "@angular/forms";
 
 import { FormsModule } from "@angular/forms";
 import { MatSnackBarModule } from "@angular/material/snack-bar";
@@ -30,8 +31,11 @@ import { SeriesComponent } from "./views/series/series.component";
 import { MovieCreateComponent } from "./components/movie/movie-create/movie-create.component";
 import { SerieCreateComponent } from "./components/serie/serie-create/serie-create.component";
 import { MovieIndexComponent } from "./components/movie/movie-index/movie-index.component";
-import { MovieUpdateComponent } from './components/movie/movie-update/movie-update.component';
-import { MovieDeleteComponent } from './components/movie/movie-delete/movie-delete.component';
+import { MovieUpdateComponent } from "./components/movie/movie-update/movie-update.component";
+import { MovieDeleteComponent } from "./components/movie/movie-delete/movie-delete.component";
+import { SerieIndexComponent } from "./components/serie/serie-index/serie-index.component";
+import { SerieUpdateComponent } from "./components/serie/serie-update/serie-update.component";
+import { SerieDeleteComponent } from "./components/serie/serie-delete/serie-delete.component";
 
 @NgModule({
   declarations: [
@@ -47,12 +51,16 @@ import { MovieDeleteComponent } from './components/movie/movie-delete/movie-dele
     MovieIndexComponent,
     MovieUpdateComponent,
     MovieDeleteComponent,
+    SerieIndexComponent,
+    SerieUpdateComponent,
+    SerieDeleteComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
+    ReactiveFormsModule,
     FormsModule,
     MatToolbarModule,
     MatIconModule,

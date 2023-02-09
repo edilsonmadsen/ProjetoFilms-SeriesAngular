@@ -5,9 +5,11 @@ import { HomeComponent } from "./views/home/home.component";
 import { MoviesComponent } from "./views/movies/movies.component";
 import { SeriesComponent } from "./views/series/series.component";
 import { MovieCreateComponent } from "./components/movie/movie-create/movie-create.component";
-import { SerieCreateComponent } from "./components/serie/serie-create/serie-create.component";
 import { MovieUpdateComponent } from "./components/movie/movie-update/movie-update.component";
 import { MovieDeleteComponent } from "./components/movie/movie-delete/movie-delete.component";
+import { SerieCreateComponent } from "./components/serie/serie-create/serie-create.component";
+import { SerieUpdateComponent } from "./components/serie/serie-update/serie-update.component";
+import { SerieDeleteComponent } from "./components/serie/serie-delete/serie-delete.component";
 
 const routes: Routes = [
   {
@@ -37,6 +39,14 @@ const routes: Routes = [
   {
     path: "series/create",
     component: SerieCreateComponent,
+  },
+  {
+    path: "series/update/:id",
+    component: SerieUpdateComponent,
+  },
+  {
+    path: "series/delete/:id",
+    component: SerieDeleteComponent,
   },
 ];
 
