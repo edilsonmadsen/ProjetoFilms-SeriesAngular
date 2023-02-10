@@ -1,46 +1,74 @@
 <mat-card class="card-home mat-elevation-z3">
   <mat-card-title class="card-title"> Editar Série </mat-card-title>
 
-  <form>
+  <form [formGroup]="updateForm" (ngSubmit)="updateSerie()">
     <mat-form-field appearance="fill">
-      <input
-        matInput
-        placeholder="Título da Série"
-        name="title"
-        [(ngModel)]="serie.title"
-      />
+      <input matInput placeholder="Título da Série" formControlName="title" />
+      <mat-error
+        *ngIf="
+          updateForm.get('title').errors &&
+          updateForm.get('title').hasError('required')
+        "
+      >
+        O campo <strong>título</strong> é obrigatório!
+      </mat-error>
+      <mat-error *ngIf="updateForm.get('title').hasError('minlength')">
+        O campo <strong>título</strong> deve conter pelo menos 6 caracteres!
+      </mat-error>
     </mat-form-field>
     <mat-form-field appearance="fill">
       <input
         matInput
         placeholder="Diretor(es) da Série"
-        name="director"
-        [(ngModel)]="serie.director"
+        formControlName="director"
       />
+      <mat-error
+        *ngIf="
+          updateForm.get('director').errors &&
+          updateForm.get('director').hasError('required')
+        "
+      >
+        O campo <strong>diretor</strong> é obrigatório!
+      </mat-error>
     </mat-form-field>
     <mat-form-field appearance="fill">
-      <input
-        matInput
-        placeholder="Gênero da Série"
-        name="genres"
-        [(ngModel)]="serie.genres"
-      />
+      <input matInput placeholder="Gênero da Série" formControlName="genres" />
+      <mat-error
+        *ngIf="
+          updateForm.get('genres').errors &&
+          updateForm.get('genres').hasError('required')
+        "
+      >
+        O campo <strong>gênero</strong> é obrigatório!
+      </mat-error>
     </mat-form-field>
 
     <mat-form-field appearance="fill">
       <input
         matInput
         placeholder="Ano de Lançamento da Série"
-        name="year"
-        [(ngModel)]="serie.year"
+        formControlName="year"
       />
+      <mat-error
+        *ngIf="
+          updateForm.get('year').errors &&
+          updateForm.get('year').hasError('required')
+        "
+      >
+        O campo <strong>ano</strong> é obrigatório!
+      </mat-error>
     </mat-form-field>
-  </form>
 
-  <div>
-    <button mat-flat-button color="primary" (click)="updateSerie()">
-      Atualizar
-    </button>
-    <button mat-flat-button color="warn" (click)="cancel()">Cancelar</button>
-  </div>
+    <div>
+      <button
+        mat-flat-button
+        color="primary"
+        type="submit"
+        [disabled]="!updateForm.valid"
+      >
+        Atualizar
+      </button>
+      <button mat-flat-button color="warn" (click)="cancel()">Cancelar</button>
+    </div>
+  </form>
 </mat-card>

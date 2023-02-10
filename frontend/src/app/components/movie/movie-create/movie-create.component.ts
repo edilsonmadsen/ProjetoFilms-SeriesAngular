@@ -3,7 +3,7 @@ import { Router } from "@angular/router";
 import { MovieService } from "./../movie.service";
 import { Movie } from "./../movie.model";
 import { SharedService } from "./../../shared/shared.service";
-import { FormBuilder } from "@angular/forms";
+import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 
 @Component({
   selector: "app-movie-create",
@@ -30,13 +30,24 @@ export class MovieCreateComponent implements OnInit {
     private fb: FormBuilder
   ) {}
 
-  ngOnInit(): void {}
+  createForm: FormGroup;
+
+  ngOnInit(): void {
+    this.createForm = this.fb.group({
+      title: ["", [Validators.required, Validators.minLength(6)]],
+      director: ["", [Validators.required]],
+      genres: ["", [Validators.required]],
+      year: ["", [Validators.required]],
+    });
+  }
 
   createMovie(): void {
-    this.movieService.create(this.movie).subscribe(() => {
-      this.sharedService.showMessage("Filme Adicionado com sucesso!");
-      this.router.navigate(["/movies"]);
-    });
+    if (this.createForm.valid) {
+      this.movieService.create(this.createForm.value).subscribe(() => {
+        this.sharedService.showMessage("Filme Adicionado com sucesso!");
+        this.router.navigate(["/movies"]);
+      });
+    }
   }
 
   cancel() {

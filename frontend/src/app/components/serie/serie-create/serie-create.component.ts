@@ -33,7 +33,7 @@ export class SerieCreateComponent implements OnInit {
 
   ngOnInit(): void {
     this.createForm = this.fb.group({
-      title: ["", [Validators.required]],
+      title: ["", [Validators.required, Validators.minLength(6)]],
       director: ["", [Validators.required]],
       genres: ["", [Validators.required]],
       year: ["", [Validators.required]],
@@ -42,7 +42,7 @@ export class SerieCreateComponent implements OnInit {
 
   createSerie(): void {
     if (this.createForm.valid) {
-      this.serieService.create(this.serie).subscribe(() => {
+      this.serieService.create(this.createForm.value).subscribe(() => {
         this.sharedService.showMessage("Série Adicionada com sucesso!");
         this.router.navigate(["/series"]);
       });

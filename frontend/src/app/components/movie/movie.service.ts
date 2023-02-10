@@ -40,7 +40,7 @@ export class MovieService {
     );
   }
 
-  getById(id: number): Observable<Movie> {
+  getById(id: any): Observable<Movie> {
     return this.http.get<Movie>(`${API}/movies/${id}`).pipe(
       map((obj) => obj),
       catchError((e) => this.handleError(e))

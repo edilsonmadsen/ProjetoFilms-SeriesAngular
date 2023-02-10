@@ -30,3 +30,52 @@ body {
 .snack-message-error button {
   background-color: #ffffffe6;
 }
+
+.confirm-dialog-container .mat-dialog-container {
+  border-radius: 0.25rem 0.25rem 0.4rem 0.4rem;
+  padding: 0;
+}
+
+.confirm-dialog-container .content-container {
+  /*margin: 5px 5px 15px 5px;*/
+  color: #8f9cb5;
+  display: flex;
+}
+
+.confirm-dialog-container #close-icon {
+  margin-left: auto;
+  margin-right: 10px;
+  margin-top: 10px;
+  order: 2;
+  font-weight: bolder;
+}
+
+.confirm-dialog-container #close-icon:hover {
+  cursor: pointer;
+}
+
+.confirm-dialog-container #no-button {
+  height: 50px;
+  width: 140px;
+  background-color: #fc7169;
+  color: #fff;
+  border-radius: 0px;
+  margin-bottom: 55px;
+  margin-left: 55px;
+}
+.confirm-dialog-container #yes-button {
+  height: 50px;
+  width: 140px;
+  background-color: #c3c5bf;
+  color: #fff;
+  border-radius: 0px;
+  margin-bottom: 55px;
+}
+
+.confirm-dialog-container span.content-span {
+  padding: 35px 16px;
+  text-align: center;
+  font-size: 1.1rem;
+  margin-left: 25px;
+  margin-top: 10px;
+}

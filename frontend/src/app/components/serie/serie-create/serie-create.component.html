@@ -3,12 +3,7 @@
 
   <form [formGroup]="createForm" (ngSubmit)="createSerie()">
     <mat-form-field appearance="fill">
-      <input
-        matInput
-        placeholder="Título da Série"
-        formControlName="title"
-        [(ngModel)]="serie.title"
-      />
+      <input matInput placeholder="Título da Série" formControlName="title" />
       <mat-error
         *ngIf="
           createForm.get('title').errors &&
@@ -17,13 +12,15 @@
       >
         O campo <strong>título</strong> é obrigatório!
       </mat-error>
+      <mat-error *ngIf="createForm.get('title').hasError('minlength')">
+        O campo <strong>título</strong> deve conter pelo menos 6 caracteres!
+      </mat-error>
     </mat-form-field>
     <mat-form-field appearance="fill">
       <input
         matInput
         placeholder="Diretor(es) da Série"
         formControlName="director"
-        [(ngModel)]="serie.director"
       />
       <mat-error
         *ngIf="
@@ -35,12 +32,7 @@
       </mat-error>
     </mat-form-field>
     <mat-form-field appearance="fill">
-      <input
-        matInput
-        placeholder="Gênero da Série"
-        formControlName="genres"
-        [(ngModel)]="serie.genres"
-      />
+      <input matInput placeholder="Gênero da Série" formControlName="genres" />
       <mat-error
         *ngIf="
           createForm.get('genres').errors &&
@@ -56,7 +48,6 @@
         matInput
         placeholder="Ano de Lançamento da Série"
         formControlName="year"
-        [(ngModel)]="serie.year"
       />
       <mat-error
         *ngIf="
@@ -69,7 +60,14 @@
     </mat-form-field>
 
     <div>
-      <button mat-flat-button color="primary" type="submit">Salvar</button>
+      <button
+        mat-flat-button
+        color="primary"
+        type="submit"
+        [disabled]="!createForm.valid"
+      >
+        Salvar
+      </button>
       <button mat-flat-button color="warn" (click)="cancel()">Cancelar</button>
     </div>
   </form>

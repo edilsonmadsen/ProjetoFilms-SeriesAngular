@@ -1,6 +1,8 @@
 import { Component, OnInit } from "@angular/core";
 import { Serie } from "./../serie.model";
 import { SerieService } from "./../serie.service";
+import { DialogService } from "./../../shared/dialog.service";
+import { SharedService } from "./../../shared/shared.service";
 
 @Component({
   selector: "app-serie-index",
@@ -18,13 +20,31 @@ export class SerieIndexComponent implements OnInit {
     "actions",
   ];
 
-  constructor(private serieService: SerieService) {}
+  constructor(
+    private serieService: SerieService,
+    private dialogService: DialogService,
+    private sharedService: SharedService
+  ) {}
 
   ngOnInit(): void {
     this.serieService.index().subscribe((series) => {
       this.series = series;
     });
   }
-}
-{
+
+  OnDelete(id: any) {
+    this.dialogService
+      .openConfirmDialog("Tem certeza que deseja remover essa série?")
+      .afterClosed()
+      .subscribe((res) => {
+        if (res) {
+          this.serieService.deleteSerie(id).subscribe(() => {
+            this.sharedService.showMessage("Série Removida com sucesso!");
+            this.serieService.index().subscribe((series) => {
+              this.series = series;
+            });
+          });
+        }
+      });
+  }
 }

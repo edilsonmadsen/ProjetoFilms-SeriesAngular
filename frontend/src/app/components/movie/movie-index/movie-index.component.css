@@ -13,4 +13,5 @@
 
 .delete > i {
   color: #9c3333;
+  cursor: pointer;
 }
