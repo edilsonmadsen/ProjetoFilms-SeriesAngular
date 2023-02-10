@@ -20,7 +20,7 @@ Projeto que lista filmes e séries em páginas diferentes:
 
 ## ⚙️ Demonstração do projeto em execução
 
-https://user-images.githubusercontent.com/92545393/218139969-1eaed41e-a89c-46e2-93f9-2ec2f59d237c.mp4
+https://user-images.githubusercontent.com/92545393/218149977-84501efc-34c3-49eb-af04-86cf960bd093.mp4
 
 
 ## 📌 Deploy do Projeto
