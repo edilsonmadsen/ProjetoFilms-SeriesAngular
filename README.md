@@ -22,11 +22,6 @@ Projeto que lista filmes e séries em páginas diferentes:
 
 https://user-images.githubusercontent.com/92545393/218149977-84501efc-34c3-49eb-af04-86cf960bd093.mp4
 
-
-## 📌 Deploy do Projeto
-
-Building... 
-
 ## 🚀 Começando - Start
 
 Essas instruções permitirão que você obtenha uma cópia do projeto em operação na sua máquina local para fins de desenvolvimento e teste.
