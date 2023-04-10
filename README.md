@@ -17,7 +17,6 @@ Projeto que lista filmes e séries em páginas diferentes:
 
 * Integrado com backend db.json para o arquivamento dos dados.
 
-
 ## ⚙️ Demonstração do projeto em execução
 
 https://user-images.githubusercontent.com/92545393/218149977-84501efc-34c3-49eb-af04-86cf960bd093.mp4
