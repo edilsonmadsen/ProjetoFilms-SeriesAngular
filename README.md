@@ -5,6 +5,7 @@
 </div>
 <br>
 
+
 Projeto que lista filmes e séries em páginas diferentes:
 
 * Contendo uma página Home simples somente para separação onde o foco foi o crud em Angular.
