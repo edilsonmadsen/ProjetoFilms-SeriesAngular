@@ -8,7 +8,6 @@
 
 Projeto que lista filmes e séries em páginas diferentes:
 
-
 * Contendo uma página Home simples somente para separação onde o foco foi o crud em Angular.
 
 * Páginas de filmes e séries onde é possível adicionar, renomear e excluir filmes/séries;
