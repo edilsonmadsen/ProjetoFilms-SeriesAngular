@@ -1,4 +1,5 @@
 # Projeto de Filmes & Series em AngularTS
+
 <br>
 <div align="center">
   <img src="https://user-images.githubusercontent.com/92545393/218128009-2e8166fe-400d-4319-b604-e0b1cfeed515.jpg" width="300px"/>
