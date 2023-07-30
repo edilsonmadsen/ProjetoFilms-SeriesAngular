@@ -48,7 +48,6 @@ npm start - pasta backend
 abrir no seu navegador o seguinte link: https://localhost:4200
 ```
 
-
 ## 📦 Implantação
 
 Abra o terminal na raiz do projeto e adicione as seguintes dependências:
